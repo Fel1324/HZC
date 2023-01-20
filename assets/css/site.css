@@ -1,0 +1,439 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'icones';
+    src: url(../font/icones.ttf);
+}
+
+body{
+    background-color: var(--corpo);
+    font-family: 'Open Sans', 'icones', sans-serif;
+    color: var(--fonte);
+}
+
+/* START HEADER*/
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--cabeçalho-mobile);
+    padding: 0.8rem 1.6rem;
+    box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.16);
+}
+
+.header__menu i::before{
+    content: "\e904";
+    font-size: 2.4rem;
+}
+
+.header__notification i::before{
+    content: "\e906";
+    font-size: 2.4rem;
+}
+
+.header__logo{
+    width: 4rem;
+}
+
+.header__profile{
+    display: none;
+}
+/* END HEADER */
+
+/* START MENU-LATERAL */
+.menu-lateral{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--menu-lateral);
+    width: 75vw;
+    height: 100vh;
+
+    position: absolute;
+    left: -100vw;
+    transition: .25s;
+}
+
+.menu-lateral--active{
+    left: 0;
+    transition: .25s;
+}
+
+.menu-lateral__logo{
+    width: 11.8rem;
+    align-self: center;
+    padding: 1.6rem;
+}
+
+.menu-lateral__link{
+    height: 6.4rem;
+    color: var(--fonte-alternativa);
+    padding-left: 6.4rem;
+    display: flex;
+    align-items: center;
+}
+
+.menu-lateral__link--active{
+    color: var(--fonte);
+    padding-left: 5.6rem;
+    border-left: 8px solid #FFF;
+}
+
+.menu-lateral__link::before{
+    content: "\e900";
+    width: 2.4rem;
+    height: 2.4rem;
+    font-size: 2.4rem;
+    position: absolute;
+    left: 2.4rem;
+}
+
+/* ICONS */
+.menu-lateral__link--inicio::before{
+    content: "\e902";
+}
+
+.menu-lateral__link--videos::before{
+    content: "\e90e";
+}
+
+.menu-lateral__link--picos::before{
+    content: "\e909";
+}
+
+.menu-lateral__link--integrantes::before{
+    content: "\e903";
+}
+
+.menu-lateral__link--camisas::before{
+    content: "\e900";
+}
+
+.menu-lateral__link--pinturas::before{
+    content: "\e90a";
+}
+/* END ICONS */
+
+/* END MENU-LATERAL */
+
+/* START MAIN */
+.main{
+    padding: 2.4rem 1.6rem;
+    display: grid;
+    gap: 1.6rem;
+
+    width: min(350px, 100%);
+    margin-inline: auto;
+}
+
+.title-page{
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+
+.card{
+    width: 100%;
+    border-radius: 1.5rem;
+    overflow: hidden; /*QUALQUER COISA QUE PASSAR DESTE CARTÃO VAI FICAR ESCONDIDO*/
+    background-color: var(--cartão);
+}
+
+.card__img--desktop{
+    display: none;
+}
+
+.card--prominence{
+    margin-bottom: 1.6rem;
+}
+
+.card__content{
+    display: grid;
+    padding: 1.6rem;
+    grid-template-columns: auto 1fr;
+    gap: 0.8rem;
+    width: 100%;
+}
+
+.card__prominence{
+    grid-column: span 2;
+}
+
+.card__title{
+    font-size: 1.92rem;
+    font-weight: 700;
+    grid-column: span 2;
+}
+
+.card__profile{
+    color: var(--fonte-alternativa);
+    font-size: 1.44rem;
+    grid-column: span 2;
+}
+
+.card__info{
+    display: flex;
+    align-items: center;
+    color: var(--fonte-alternativa);
+    font-size: 1.6rem;
+}
+
+.card__info--time::before{
+    content: "\e90c";
+    margin-right: 0.4rem;
+    font-size: 1.6rem;
+}
+
+.card__info--view::before{
+    content: "\e90f";
+    margin-right: 0.4rem;
+    font-size: 1.6rem;
+}
+
+.card__button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--botão);
+    width: 4rem;
+    height: 4rem;
+    border-radius: 1rem;
+    font-size: 1.44rem;
+    justify-self: flex-end;
+    align-self: flex-end;
+}
+
+.card__button--play::before{
+    content: "\e90b";
+    font-size: 2.4rem;
+}
+
+.card__button--prominence{
+    width: 100%;
+    grid-column: span 2;
+}
+
+.card__button--prominence::before{
+    margin-right: 0.8rem;
+}
+
+.card__button--buy::before{
+    content: "\e901";
+    font-size: 2.4rem;
+}
+
+.card--recents{
+    display: none;
+}
+
+.section{
+    display: grid;
+    gap: 1.6rem;
+}
+
+.title-section{
+    font-size: 1.92rem;
+    font-weight: 700;
+}
+
+.card__info--dolar::before{
+    content: "$";
+    margin-right: 0.4rem;
+    font-size: 1.6rem;
+}
+/* END MAIN */
+
+/* START MEDIA QUERY */
+@media screen and (min-width: 768px) {
+    .main{
+        width: 45%;
+    }    
+}
+
+@media screen and (min-width: 1024px){
+    body{
+        display: grid;
+        grid-template-columns: auto 1fr;
+    }
+
+    /* START HEADER */
+    .header{
+        background-color: var(--cabeçalho);
+        display: grid;
+        column-gap: 3.2rem;
+        grid-template-columns: 1fr auto;
+        padding: 1.6rem 6.0rem;
+        height: 8.0rem;
+        box-sizing: border-box;
+        grid-column: 2;
+    }
+
+    .header__menu{
+        display: none;
+    }
+
+    .header__logo{
+        display: none;
+    }
+
+    .header__profile{
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        column-gap: 0.8rem;
+        align-items: center;
+        justify-self: flex-end;
+        color: var(--fonte-alternativa);
+        padding: 0.8rem 3.2rem;
+        border-right: 1px solid var(--fonte-alternativa);
+    }
+
+    .header__profile::before{
+        content: "";
+        display: block;
+        width: 3.2rem;
+        height: 3.2rem;
+        background-image: url('https://github.com/fel1324.png');
+        border-radius: 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .header__profile::after{
+        content: "\e90d";
+        color: #FFF;
+        font-size: 2.4rem;
+    }
+    /* END HEADER */
+
+    /* START MENU-LATERAL */
+    .menu-lateral{
+        position: static;
+        width: 20rem;
+        grid-column: 1;
+        grid-row: 1 / span 2;
+    }
+    /* END MENU-LATERAL */
+
+    /* START MAIN */
+    .main{
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        grid-template-areas: 
+            "title-page title-page title-page"
+            "prominence-video prominence-video videos-recents"
+            "section-videos section-videos section-videos"
+            "products-recents prominence-products prominence-products"
+            "section-products section-products section-products"
+        ;
+        column-gap: 3.2rem;
+        padding: 1.6rem 6.0rem;
+        grid-column: 2;
+        width: 100%;
+    }
+
+    .card--prominence{
+        margin-bottom: 0;
+    }
+
+    .card__img--mobile{
+        display: none
+    }
+
+    .card__img--desktop{
+        display: block;
+    }
+
+    .card__button--prominence{
+        grid-column: auto;
+        padding: 1.6rem 0.8rem;
+    }
+
+    .card--recents{
+        display: grid;
+        grid-template-columns: auto auto;
+        align-items: center;
+        row-gap: 2.4rem;
+        width: 25.6rem;
+        padding: 1.6rem;
+        box-sizing: border-box;
+        align-self: flex-start;
+    }
+
+    .card--recents .card__title{
+        grid-column: auto;
+    }
+
+    .card__link{
+        font-size: 1.28rem;
+        font-weight: 600;
+        color: var(--links);
+        justify-self: flex-end;
+    }
+
+    .card__list{
+        display: grid;
+        row-gap: 1.6rem;
+        grid-column: span 2;
+    }
+
+    .card__item{
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 0.8rem;
+    }
+
+    .card__item--thumbnail{
+        width: 3.2rem;
+        grid-row: span 2;
+    }
+
+    .card__item-title{
+        font-size: 1.44rem;
+        line-height: 1.92rem;
+        font-weight: 700;
+    }
+
+    .card__item-profile{
+        font-size: 1.28rem;
+        color: var(--fonte-alternativa);
+    }
+
+    .section{
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .title-section{
+        grid-column: span 4;
+    }
+    /* END MAIN */
+
+    /* GRIDS AREAS */
+    .prominence-video{
+        grid-area: prominence-video;
+    }
+    
+    .videos-recents{
+        grid-area: videos-recents;
+    }
+    
+    .section-videos{
+        grid-area: section-videos;
+    }
+    
+    .prominence-products{
+        grid-area: prominence-products;
+    }
+    
+    .products-recents{
+        grid-area: products-recents;
+    }
+    
+    .section-products{
+        grid-area: section-products;
+    }
+    /* GRIDS AREAS */
+}
