@@ -1,6 +1,6 @@
 <h1 align="center">HZC</h1>
 
-<h3 align="center">O Projeto HZC foi desenvolvido no curos de Flex e Grid da Alura.</h3>
+<h3 align="center">O Projeto HZC foi desenvolvido no cursos de Flex e Grid da Alura.</h3>
 
 <br>
 
