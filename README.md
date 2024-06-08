@@ -29,7 +29,7 @@
 <h2 id="desc">💌 Descrição do projeto</h2>
 
 <p align="justify">
-    O HZC é um site voltado para quem gosta de andar de skate 🛹. No HZC é possível encontrar muitas coisas interessantes para os fãs do esporte, como camisetas, pinturas, entre outras coisas legais.
+    O HZC é um site voltado para quem gosta de andar de skate 🛹.
 </p>
 
 <br>
